@@ -28,6 +28,19 @@ document.getElementById('key-pad').addEventListener('click', function (event) {
     }
 })
 
-function verifyPin() {
+const successMessage = document.getElementById('notify-success');
+const failError = document.getElementById('notify-fail');
 
+function verifyPin() {
+    const pin = document.getElementById('display-pin').value;
+    const typeNum = document.getElementById('typed-numbers').value;
+
+    if (pin == typeNum) {
+        successMessage.style.display = 'block'
+        failError.style.display = 'none'
+    }
+    else {
+        failError.style.display = 'block'
+        successMessage.style.display = 'none'
+    }
 }
